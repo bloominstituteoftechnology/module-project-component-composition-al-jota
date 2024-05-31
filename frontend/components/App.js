@@ -19,16 +19,17 @@ function App() {
           console.log(err.message)
         })
     }
-    // fetchPhoto()
-    setApod({
-        "date": "2024-05-31",
-        "explanation": "Made with narrowband filters, this cosmic snapshot covers a field of view over twice as wide as the full Moon within the boundaries of the constellation Cygnus. It highlights the bright edge of a ring-like nebula traced by the glow of ionized hydrogen and oxygen gas. Embedded in the region's expanse of interstellar clouds, the complex, glowing arcs are sections of shells of material swept up by the wind from Wolf-Rayet star WR 134, brightest star near the center of the frame. Distance estimates ...",
-        "hdurl": "https://apod.nasa.gov/apod/image/2405/NebulousRealmofWR134_2048.png",
-        "media_type": "image",
-        "service_version": "v1",
-        "title": "The Nebulous Realm of WR 134",
-        "url": "https://apod.nasa.gov/apod/image/2405/NebulousRealmofWR134_1024.png"
-      })
+    fetchPhoto()
+    // setApod({
+    //     "copyright": "Xin Long",
+    //     "date": "2024-05-31",
+    //     "explanation": "Made with narrowband filters, this cosmic snapshot covers a field of view over twice as wide as the full Moon within the boundaries of the constellation Cygnus. It highlights the bright edge of a ring-like nebula traced by the glow of ionized hydrogen and oxygen gas. Embedded in the region's expanse of interstellar clouds, the complex, glowing arcs are sections of shells of material swept up by the wind from Wolf-Rayet star WR 134, brightest star near the center of the frame. Distance estimates ...",
+    //     "hdurl": "https://apod.nasa.gov/apod/image/2405/NebulousRealmofWR134_2048.png",
+    //     "media_type": "image",
+    //     "service_version": "v1",
+    //     "title": "The Nebulous Realm of WR 134",
+    //     "url": "https://apod.nasa.gov/apod/image/2405/NebulousRealmofWR134_1024.png"
+    //   })
   }, [])
   if (!apod) return 'Fetching Photo of the Day...'
   return (
@@ -37,6 +38,7 @@ function App() {
         title={apod.title}
         text={apod.explanation}
         imageURL={apod.url}
+        copyright={apod.copyright}
         date={apod.date}
       />
     </section>
